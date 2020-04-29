@@ -41,6 +41,12 @@ body{
     padding: 0.5em 1em;
     
 }
+.average{
+    color:darkgreen;
+}
+.underAverage{
+    color:darkorange;
+}
 @media screen and (min-width: 1024px) { /* Specific to this particular image */
     .navitem{
         font-size: 1em;
