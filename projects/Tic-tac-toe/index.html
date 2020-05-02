@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <meta charset="UTF-8"/> 
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="titlecont">
+        <h1 id="title">Tic Tac Toe</h1>
+    </div> 
+    <div id="pNameCont">
+        <div id="actualTurncont">
+            <h3 id="actualturn">Actual Turn:</h3>
+        </div>
+        <label for="Pname">Player 1 name:</label><br>
+        <input type="text" placeholder="Bob" id="Pname"><br>
+        <label for="P2name">Player 2 name:</label><br>
+        <input type="text" placeholder="Rob" id="P2name"><br>
+        <p>Select a Mark for P1:</p>
+        <input type="radio" id="X" name="marksel" value="x" checked>
+        <label for="X">X</label>
+        <input type="radio" id="O" name="marksel" value="o">
+        <label for="O">O</label><br>
+        <button id="start"onclick="setplayers()">Start Game</button>
+        </div>   
+    <div id="scoreboard"></div>
+    <div id="boardcontainer"></div> 
+    
+        </div>  
+    <script src="app.js"></script>
+</body>

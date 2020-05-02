@@ -1,0 +1,62 @@
+.cardbox{
+    border:none;
+    background-color: azure;
+}
+
+#boardcontainer{
+    margin-top: 20px;
+    display:inline-grid;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px;
+    grid-gap: 5px;
+    align-self: center;
+    margin-left: 39%;
+    text-align: center;
+    background-color: black;
+    border:2px solid black; 
+}
+#title{
+    text-align: center;
+}
+body{
+    background-image: url('plnas.JPG');
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+}
+#pNameCont{
+    position: fixed;
+    margin-left: 10%;
+    border:1px solid black;
+    background-color: white;
+    padding: 10px 10px 20px 10px;
+    border-radius: 20px;
+}
+#titlecont{
+    border:1px solid black;
+    background-color: white;
+    position: relative;
+    width: 20%;
+    align-self: center;
+    margin-left: 38%;
+    height: 10%;
+    border-radius:22px ;
+}
+#start{
+    padding:10px 10px;
+    color:White;
+    background-color:#44c767;
+    border-radius: 22px;
+    margin-left: 20%;
+    margin-top:5%;
+    font-family:Arial;
+}
+#start:focus{
+    outline: none;
+}
+#start:hover{
+    background-color:#5cbf2a;
+}

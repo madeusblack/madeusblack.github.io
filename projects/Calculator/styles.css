@@ -1,0 +1,54 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(107,107,154,0.8715861344537815) 35%, rgba(52,113,125,0.8743872549019608) 100%);}
+#displaycont{
+    background-color: grey;
+    width:438px;
+    height: 120px;
+    border:1px solid transparent;
+    opacity: 0.8;
+}
+#displayup{
+    text-align: right;
+font-size: 25px;
+color: darkgrey;
+margin-right: 10px;
+margin-bottom: 5px;
+
+}
+#displaybase{
+text-align: right;
+font-size: 55px;
+color: white;
+margin-right: 10px;
+margin-top: 5px;
+}
+#buttonContainer{
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+    width: 440px;
+    height: 500px;
+    opacity: 0.8;
+}
+#zero{
+    grid-column: 1 / span 2
+}
+button{
+    border: none;
+    margin: 1px 1px 1px 1px;
+    background-color: grey;
+    color: white;
+    font-size: 20px;
+    transition: 0.4s;
+}
+button:hover{
+    background-color: darkgrey;
+    transition: 0.4s;
+
+}
+#calccontainer{
+    width: 30%;
+  margin: 0 auto;
+
+}

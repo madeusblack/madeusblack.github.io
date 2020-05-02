@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <meta charset="UTF-8"/> 
+  <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="calccontainer">
+        <div id="displaycont">
+            <p id="displayup">746</p>
+            <p id="displaybase">746</p>
+        </div>
+        
+        <div id="buttonContainer">
+            <button onclick="clean('simple')">C</button>
+            <button onclick="clean('all')">CE</button>
+
+            <button onclick="backspace()"><-</button>
+            <button onclick="pass(' /')">/</button>
+            <button onclick="acdisplay(9)">9</button>
+            <button onclick="acdisplay(8)">8</button>
+            <button onclick="acdisplay(7)">7</button>
+            <button onclick="pass(' X')">X</button>
+
+            <button onclick="acdisplay(6)">6</button>
+            <button onclick="acdisplay(5)">5</button>
+            <button onclick="acdisplay(4)">4</button>
+            <button onclick="pass(' -')">-</button>
+
+            <button onclick="acdisplay(3)">3</button>
+            <button onclick="acdisplay(2)">2</button>
+            <button onclick="acdisplay(1)">1</button>
+            <button onclick="pass(' +')">+</button>
+
+            <button id="zero" onclick="acdisplay(0)">0</button>
+            <button onclick="acdisplay('.')">,</button>
+            <button onclick="result()">=</button>
+
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
