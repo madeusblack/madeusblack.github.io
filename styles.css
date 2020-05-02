@@ -28,7 +28,7 @@ ul{
     padding-top: 1.5em;
     position: sticky;
     height: 3em;
-    background: url("background.jpg") no-repeat center center fixed;
+    background: url("background.jpg") no-repeat center center ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
