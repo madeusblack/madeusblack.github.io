@@ -1,55 +1,153 @@
-.hidden{
-    display:none;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
 }
-#navbar{
+ul{
+    list-style: upper-roman	  inside;
+
+}
+
+#navbar
+{
     text-align: center;
-    display: flex;
-    margin-top: 0;
-
-}
-.navitem{
-    margin-top: 0;
-    display: inline;  
-    padding:0.5em 0.5em;
-    background-color: lightskyblue;
-    border:1px solid gray;   
-    opacity: 0.9;
-    border-radius: 2px;
-    font-size: 2em;
-    
-    transition: 0.6s;
-    cursor: pointer;
-
-}
-.navitem:hover{
-    background-color: lightseagreen;
-    transition: 0.6s;
-}
-body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: absolute;
+    padding-top: 1.5em;
+    position: sticky;
+    height: 3em;
     background: url("background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    width: 100%;
+
+}
+.navitem{
+    padding:1em 1.6em;
+    background-color: lightsalmon;
+    border:1px solid gray;   
+    opacity: 0.9;
+    border-radius: 10px 0 10px 0;
+    font-weight:bold ;
+    transition: 0.6s;
+    height: 100%;
+    cursor: pointer;
+}
+.navitem:hover{
+    background-color: lightskyblue;
+    transition: 0.6s;
+    border-radius: 0 10px 0 10px ;
+
+}
+.title
+{
+    padding-bottom: 1em;
+}
+p
+{
+padding:0.5em 1em;
+}
+ul{
+    padding: 0em 2em;
+}
+li{
+    padding: 0.3em 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+a:visited {
+    text-decoration: none;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: darkslategray;
+
 }
 #content{
-    background-color: lightsteelblue;
+    
+    position: relative;
+    color: whitesmoke;
     opacity: 0.8;
     font-size: large;
-    border-radius: 22px;
-    padding: 0.5em 1em;
+    padding: 1em 2em;
     
 }
 .average{
-    color:darkgreen;
+    color: lightgreen;
 }
 .underAverage{
-    color:darkorange;
+    color:lightsalmon;
 }
 @media screen and (min-width: 1024px) { /* Specific to this particular image */
-    .navitem{
-        font-size: 1em;
-    }
+    
    
-  }
+}
+#projects
+{
+    padding-left: 4em;
+    display: grid; 
+    grid-template-rows: 200px;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+.projectCard
+{
+    width: 70%;
+    height: 20em;
+    padding:0.1em;
+    border:1px solid black;
+    border-radius: 22px 0 22px 0;
+    background-color: lightsteelblue;
+    transition: 0.4s;
+    text-align: center;
+
+}
+.projectCard:hover
+{
+    transition: 0.4s;
+    padding:0.2em;
+    
+}
+.projectName
+{
+    font-size: larger;
+    font-weight: bold;
+}
+.tech
+{
+    border: 1px solid black;
+    width: 40%;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.html5
+{
+    background-color: #F16529;
+}
+.css3
+{
+    background-color: #2965f1;
+}
+.javascript{
+    background-color: #F0DB4F;
+}
+.sourceCode{
+    font-weight: bold;
+}

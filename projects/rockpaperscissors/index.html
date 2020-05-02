@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div id="gameBoard">
+      <div id="gameDisplay">
+        <h2 class="displayResult" >You Choose: <img id="playerGame" class="resultImage"></h2>
+        <h2 class="displayResult" >Cpu Choose:<img id="cpuGame" class="resultImage"></h2>
+        <h2 class="displayResult" >The winner of this round is: <strong id="resultGame"> </strong></h2>
+         
+      </div>
+    <div id="buttonsContainer">
+      <button class="corner" id="left" onclick="game(computerPlay(),'rock'),checkGameStatus()">Rock</button>
+      <button id="center" onclick="game(computerPlay(),'scissors'),checkGameStatus()">Scissors</button>
+      <button class="corner" id="right" onclick="game(computerPlay(),'paper'),checkGameStatus()">Paper</button>
+      
+    </div>
+    </div>
+    <ul id="scoreBoard">
+      <li class="boardElement"><p>Games Won:</p><p id="gwon">0</p></li>
+      <li class="boardElement"><p>Games Lost:</p><p id="glost">0</p></li>
+      <li class="boardElement"><p>Draw Games:</p><p id="gdraw">0</p></li>
+      <li class="boardElement"><p>Total Games:</p><p id="gtotal">0</p></li>
+    </ul>
+
+   <!-- Scripts Area-->  
+  <script src="app.js"></script>
+</body>
+</html>
