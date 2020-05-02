@@ -1,27 +1,21 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCyet7ED_6HFxqnoeBwpD-pypXOX8p4tgQ",
-  authDomain: "library-c9d35.firebaseapp.com",
-  databaseURL: "https://library-c9d35.firebaseio.com",
-  projectId: "library-c9d35",
-  storageBucket: "library-c9d35.appspot.com",
-  messagingSenderId: "733859388867",
-  appId: "1:733859388867:web:703b09528fe7c439313176",
-  measurementId: "G-75RM36LCDK"
-};
+
 let myLibrary = [];
 lib = localStorage.getItem('datos');
-if(lib!=null){
+if(lib!=null)
+{
   myLibrary=JSON.parse(lib)
 }
 render()
-function Book(title, author, pages, read,objindex) {
+function Book(title, author, pages, read,objindex)
+{
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
   this.objindex=objindex;
-  }
-function addBookToLibrary() {
+}
+function addBookToLibrary() 
+{
   let newTitle=document.getElementById("bookname").value ;
   let newAuthor=document.getElementById("author").value;
   let newPages=document.getElementById("pages").value;
@@ -30,23 +24,28 @@ function addBookToLibrary() {
   myLibrary.push(book)
   render()
 }
-function render(){
-  var checkNodes = document.getElementById("librarycont")
+function render()
+{
+  let checkNodes = document.getElementById("librarycont")
   .hasChildNodes();
-  if (checkNodes==true){
+  if (checkNodes==true)
+  {
     let element = document.getElementById("librarycont");
-    while (element.firstChild) {
+    while (element.firstChild) 
+    {
       element.removeChild(element.firstChild);
     }
   }
-  for (index = 0; index < myLibrary.length; index++) { 
+  for (index = 0; index < myLibrary.length; index++) 
+  { 
     myLibrary[index].objindex=index
     display(myLibrary[index],index); 
   } 
   localStorage.setItem('datos', JSON.stringify(myLibrary));
 
 }
-function display(objct,indexofobj){
+function display(objct,indexofobj)
+{
   contain = document.querySelector('#librarycont')
   let card = document.createElement('div');
   card.classList.add('card1');
@@ -56,24 +55,29 @@ function display(objct,indexofobj){
   let readdis=document.createElement('h4');
   let idobj=document.createElement('h6')
   let delbutton=document.createElement('button');
+  idobj.classList.add('hidden')
   delbutton.classList.add('fa-close')
   delbutton.classList.add('fa')
-  delbutton.classList.add('delbutton')
-  delbutton.addEventListener("click", function(){
+  delbutton.classList.add('deleteBook')
+  delbutton.addEventListener("click", function()
+  {
     deleteBook(indexofobj);}, false);
   let chngbutton=document.createElement('button');
   chngbutton.classList.add('fa')
-  chngbutton.classList.add('chngbutton')
-  chngbutton.addEventListener("click", function(){
+  chngbutton.classList.add('changeReadStatus')
+  chngbutton.addEventListener("click", function()
+  {
     changestate(objct);}, false);
 
   idobj.innerHTML="ID: "+objct.objindex
   titledis.innerHTML="Title: "+objct.title
   authdis.innerHTML="By: "+objct.author
   pagesdis.innerHTML="N° of Pages: "+ objct.pages
-  if(objct.read==true){
+  if(objct.read==true)
+  {
     readdis.innerHTML="Read?: Yes"
-  }else{
+  }else
+  {
     readdis.innerHTML="Read?: No"
   }
   delbutton.innerHTML="Delete Book"
@@ -88,18 +92,22 @@ function display(objct,indexofobj){
 
   contain.appendChild(card);
 }
-function deleteBook(inx){
+function deleteBook(inx)
+{
   myLibrary.splice(inx, 1);
   console.log(myLibrary)
   render()
 }
-function changestate(obj){
+function changestate(obj)
+{
   console.log(obj)
-  if(obj.read==true){
+  if(obj.read==true)
+  {
     obj.read=false
     render()
   }
-  else{
+  else
+  {
     obj.read=true
     render()
   }
