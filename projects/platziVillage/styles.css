@@ -1,0 +1,21 @@
+body
+{
+    background-color: burlywood;
+}
+.header
+{
+    text-align: center;
+    color: chartreuse;
+    padding: 0.5em 0.5em;
+    border-radius: 22px;
+    background-color: darkcyan;
+    width: 50%;
+    position: relative;
+    border: 1px solid black;
+    margin: auto;
+
+}
+.canvasContainer
+{
+text-align: center;
+}
