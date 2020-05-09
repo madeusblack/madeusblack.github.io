@@ -87,6 +87,8 @@ body{
     opacity: 0.8;
     font-size: large;
     padding: 1em 2em;
+    display: grid;
+    grid-template-columns: auto auto;
     
 }
 .average{
@@ -151,4 +153,15 @@ body{
 }
 .sourceCode{
     font-weight: bold;
+}
+#profile
+{
+    width: 200px;
+    border-radius: 100px;
+    border:8px solid lightgreen;
+
+}
+.right
+{
+    margin-right: 4em;
 }
