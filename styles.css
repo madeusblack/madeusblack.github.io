@@ -30,6 +30,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
+
 
 }
 .header__link{
@@ -43,6 +45,7 @@ body{
     height: 100%;
     cursor: pointer;
     letter-spacing: 1px;
+    
 }
 .header__link:hover{
     background-color: #cceabb;
@@ -53,19 +56,21 @@ body{
 a{
     text-decoration: none;
     color: #3f3f44;
+
     
 }
 a:visited {
     text-decoration: none;
 }
 .content{
-
-    font-size: large;
-    padding: 1em 2em;
     display: grid;
+    padding: 2em;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
     grid-template-columns: auto auto;
-    grid-template-rows: repeat(2,350px);
-    text-align: center;    
+    text-align: center;   
+    row-gap: 2em; 
 }
 .skills-table{
    display: flex;
@@ -86,6 +91,8 @@ td{
 table{
     background-color: #fdcb9e;
     margin-bottom: 5em;
+    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
+
 }
 
 
@@ -94,6 +101,8 @@ table{
     width: 200px;
     border-radius: 100px;
     border:8px solid #fdcb9e;
+    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
+
 
 }
 
@@ -114,23 +123,19 @@ li{
 }
 .content__projects{
 
-    font-size: large;
-    padding: 1em 2em;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: repeat(2,auto);
-    row-gap: 2em;
-    text-align: center;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 100%;
 }
 #projects
 {
-    justify-content: center;
+    justify-content: space-around;
     display: grid; 
-    grid-template-rows: 20em 20em;
     row-gap: 3em;
-    grid-template-columns: repeat(4, 18%);
-    column-gap: 3em;
-    margin-bottom: 2em;
+    padding: 2em;
+    grid-template-columns: repeat(4, 20%);
     text-align: center;
 }
 .tech-container{
@@ -142,6 +147,7 @@ li{
 .projectCard
 {
     display: flex;
+    height: 20em;
     justify-content: space-around;
     align-items: center;
     border:1px solid white;
@@ -151,12 +157,11 @@ li{
     flex-direction: column;
     padding: 0 1em;
     color: white;
-
-}
+    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);}
 .projectCard:hover
 {
     transition: 0.4s;
-    padding: 0 0.5em;    
+    background-color: #1886c1;
 }
 .projectName
 {
@@ -164,8 +169,15 @@ li{
     font-weight: bold;
     color: white;
 }
+.projectName img
+{
+ border:3px solid white;
+}
 .projectNameText{
     padding: 0.5em;
+}
+.projectName:hover{
+    text-decoration: underline;
 }
 .tech
 {
@@ -213,12 +225,32 @@ li{
     }
     .content{
 
-        grid-template-columns: 1fr;
-        text-align: none;    
-        padding:0;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       
     }
-    #profile{
-       display: none;
+    .profile-container{
+        order: 1;
+
     }
+    .intro{
+        order: 2;
+
+    }
+    .skills-table{
+        order: 3;
+        margin:1em;
+
+    }
+    .soft-skills{
+        order: 4;
+
+    }
+    #projects{
+        grid-template-columns: 30% 30%
+
+    }
+
 
 }
