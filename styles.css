@@ -160,6 +160,8 @@ li{
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);}
 .projectCard:hover
 {
+    box-shadow: 10px 10px 9px -4px rgba(0,0,0,0.75);
+
     transition: 0.4s;
     background-color: #1886c1;
 }

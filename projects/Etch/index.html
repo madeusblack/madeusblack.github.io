@@ -5,32 +5,34 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="sbarLeft">
-        <ul>
-            <li >
-                <label id="lrows" for="rows">Grid Density:</label>
-                <input type="range" id="rows" class="rowinput" name="rows" min="8" max="65" step="8" value="16">
-            </li>
-            
-            <li>
-                <h2>Select a Brush</h2>
-                <input type="radio" class="roundsel" id="bwascendant" name="brush" value="bwascendant">
-                <label for="male">Grayscale</label><br>
-                <input type="radio" class="roundsel" id="rainbow" name="brush" value="rainbow">
-                <label for="female">Rainbow</label><br>
-                <input type="radio" class="roundsel" id="eraser" name="brush" value="eraser">
-                <label for="female">Eraser</label><br>
-            </li>
-            <li id="buttonCont">
-                <button onclick="generate()">Set Grid</button>
-            </li>
-           
-        </ul>
-          
+    <div class="title-cont">
+        <h1>Etch a Sketch</h1>
     </div>
-    <div id="etchCont">
-        <div class="container">
+    <div class="main-cont">
+
+        <div id="etchCont">
+            <div class="container">
+            </div>
         </div>
+
+        <div class="sbarLeft">
+            <label id="lrows" for="rows">Grid Density:
+                <input type="range" id="rows" class="rowinput" name="rows" min="8" max="65" step="8" value="16">
+            </label>
+            <h2>Select a Brush</h2>
+            <label for="male">Grayscale
+                <input type="radio" class="roundsel" id="bwascendant" name="brush" value="bwascendant">
+            </label>
+            <label for="female">Rainbow
+                <input type="radio" class="roundsel" id="rainbow" name="brush" value="rainbow">
+            </label>
+            <label for="female">Eraser
+            <input type="radio" class="roundsel" id="eraser" name="brush" value="eraser">
+            </label>
+            <button onclick="generate()">Set Grid</button>
+        </div>
+
+
     </div>  
     <script src="app.js"></script>
 </body>

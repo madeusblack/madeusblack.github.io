@@ -1,33 +1,30 @@
 body
 {
-    display: grid;
-    grid-template-columns: 450px 400px 100px;
-    grid-row-gap: 20px;
+ 
     background-image: linear-gradient(blue,white);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    justify-content: space-between;
     color:white;
 
 }
-.right
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2,auto);
+    grid-row-gap: 1em;
+    justify-content: center;
+}
+.content
 {
     background-color: gray;
     color:white;
     border-radius: 23px;
     padding: 2em;
-    margin-right: 4em;  
+    
 
 }
-.left
-{
-    background-color: gray;
-    padding: 2em;
-    border-radius: 23px;
-    margin-left: 5em;
 
-}
 #input
 {
     margin: auto;

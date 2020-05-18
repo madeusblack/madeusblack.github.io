@@ -8,21 +8,22 @@
     
 </head>
 <body>
-    <div class="left">
-    <p>
-       <img src="cajero.gif" /> 
-    </p>
-
-        <p id="input">
-            <label for="number">Enter the amount that you want to withdraw</label><br><br>
-            <input type="number" id="numero" name="number"/>
-            <input type="button" id="iniciar" value="Withdraw" />
-            <p id="error"></p>
-        </p>
-    </div>
-    <div class="right">
-        <h2>Bill Output</h2>
-        <p id="entregado"></p>
+    <div class="container">
+        <div class="content">
+            <p>
+                <img src="cajero.gif" /> 
+            </p>
+            <p id="input">
+                <label for="number">Enter the amount that you want to withdraw</label><br><br>
+                <input type="number" id="numero" name="number"/>
+                <input type="button" id="iniciar" value="Withdraw" />
+                <div id="error"></div>
+            </p>
+        </div>
+        <div class="content">
+            <h2>Bill Output</h2>
+            <p id="entregado"></p>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

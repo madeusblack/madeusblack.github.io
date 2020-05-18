@@ -48,6 +48,8 @@ function display(objct,indexofobj)
 {
   contain = document.querySelector('#librarycont')
   let card = document.createElement('div');
+  let butcont= document.createElement('div');
+  butcont.classList.add('button__container');
   card.classList.add('card1');
   let titledis = document.createElement('h4');
   let authdis=document.createElement('h4');
@@ -87,8 +89,9 @@ function display(objct,indexofobj)
   card.appendChild(authdis);
   card.appendChild(pagesdis);
   card.appendChild(readdis);
-  card.appendChild(chngbutton);
-  card.appendChild(delbutton);
+  butcont.appendChild(chngbutton);
+  butcont.appendChild(delbutton);
+  card.appendChild(butcont);
 
   contain.appendChild(card);
 }

@@ -6,20 +6,24 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
+    <div class="title">
+    <h1 >Library</h1>
+    </div>
     <div id="maincont">
       <div id="newbookcont" class="card"> 
         <img src="newbook.jfif" alt="new book image"  height="40%">
-        <div class="container">
-          <label for="bookname">Title:</label>
-            <input type="text" id="bookname" class="itext" name="bookname"><br>
-            <label for="author">Author:</label>
-            <input type="text" id="author" class="itext" name="author"><br>
-            <label for="pages">Pages:</label><br>
-            <input type="number" id="pages" class="itext" name="pages" min="1" max="15000"><br>
-            <label for="read"> Read?</label>
-            <input type="checkbox" id="read"><br><br>
-            <button class="saveButton" onclick="addBookToLibrary()">Save and display</button>
-      </div>
+        <input type="text" id="bookname" class="itext" name="bookname">
+          <label for="bookname">Title</label>
+          <input type="text" id="author" class="itext" name="author">
+
+          <label for="author">Author</label>
+          <input type="number" id="pages" class="itext" name="pages" min="1" max="15000">
+
+          <label for="pages">Pages</label>
+          <label for="read"> Read?
+            <input type="checkbox" id="read">
+          </label>
+          <button class="saveButton" onclick="addBookToLibrary()">Save and display</button>
     </div>
     <div id="librarycont"></div>
   </div>

@@ -1,85 +1,79 @@
-.card 
-{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 13em;
-  height:24em;
-  margin-left: 1%;
-  margin-top:1% ;
-  background-color: #FBAB7E;
-  position: absolute;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  border-radius: 22px;
-  padding: 1em 1em;
-  text-align: center;
-}
-.card:hover,.card1:hover 
-{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.card1 
-{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  position: relative;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  border-radius: 22px;
-  padding: 1em 1em;
-  height:12em;
-
-}
-.container 
-{
-  padding: 2px 16px;
-  margin: 5% 5%;
-}
-#librarycont
-{
-display: grid;
-grid-template-columns: 14em 14em 14em;
-column-gap: 2.5em;
-row-gap: 1.5em;
-margin-left: 25%;
-margin-top: 1em;
-width:60%;
-}
-#maincont
-{
-display: grid;
-}
-label
-{
-margin:5px 0 5px 0;
-}
-h4
-{
-margin:5px 0 15px 5px ;
-color:rgba(4, 20, 2, 0.884);
-}
-input:focus, textarea:focus, select:focus 
-{
-outline: none;
-}
-input:hover, textarea:hover, select:hover 
-{
-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
-transition: 0.3s;
-}
 body
 {
 background: rgb(238,174,202);
 background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
+.title{
+  display: flex;
+  justify-content: center;
+}
+#maincont
+{
+display: grid;
+grid-template-columns: 17em 1fr ;
+column-gap: 3em;
+}
+
+.card 
+{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #FBAB7E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  border-radius: 22px;
+  padding: 1em;
+  justify-content: space-around;
+  height: 30em;
+}
+.card:hover,.card1:hover 
+{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card img{
+  border-radius: 22px;
+  border: 2px solid teal ;
+}
+.card1 
+{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  border-radius: 22px;
+  padding: 1em 1em 2em 1em;
+  height: 15em;
+
+}
+
+#librarycont
+{
+  margin-right: 1.3%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr) ;
+  column-gap: 2.5em;
+  row-gap: 1.5em;
+}
+
+input:focus, textarea:focus, select:focus 
+{
+outline: none;
+}
+
+
 input, textarea 
 {
-border: none;
-border-radius: 22px;
-padding-left: 0.5em;
-box-shadow: 0 4px 2px -2px gray;
-margin-bottom: 0.4em;
-padding-top: 0.3em;
-padding-bottom: 0.3em;
+border-top: none;
+border-left: none;
+border-right: none;
+border-bottom: 2px solid black;
+background-color: transparent;
+font-size: 17px;
 }
 button
 {
@@ -89,7 +83,7 @@ padding:0.3em 0.5em;
 }
 button:hover
 {
-background-color: lightgreen;
+background-color: rgb(76, 226, 76);
 box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
 transition: 0.3s; 
 }
@@ -97,10 +91,7 @@ button:focus
 {
 outline:0;
 }
-h2
-{
-color:darkslategray;
-}
+
 #read
 {
 box-shadow: none;
@@ -111,9 +102,6 @@ box-shadow: none;
 }
 .deleteBook{
   border-radius: 0px 22px 22px 0px;
-  position: absolute;
-  bottom: 1em;
-  right: 24px;
 
 }
 .deleteBook:hover
@@ -121,9 +109,6 @@ box-shadow: none;
 background-color: lightcoral;
 }
 .changeReadStatus{
-  position: absolute;
-  bottom: 1em;
-  left: 24px;
 
   border-radius: 22px 0 0 22px;
   
@@ -135,7 +120,16 @@ background-color: lightskyblue;
 .saveButton
 {
   width: 100%;
-  
   height: 3em;
   background-color: white;
+}
+.button__container{
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 1000px){
+  #librarycont{
+    grid-template-columns: repeat(2,1fr);
+  }
+
 }
