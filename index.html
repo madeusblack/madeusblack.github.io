@@ -1,50 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/png" href="favicon.png">
-        <title>Madeus Black</title>
-    </head>
-    <body>
-        <div id=navbar >
-            <a href="./index.html" target="" class="navitem">About Me</a>
-            <a href="./projects.html" target="" class="navitem">Projects</a>
-            <a href="./contact.html" target="" class="navitem">Contact</a>
-            <a href="./media/resume.pdf" target="_blank"class="navitem">Resume</a>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Madeus Black</title>
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" target="" class="header__link">About Me</a>
+        <a href="./projects.html" target="" class="header__link">Projects</a>
+        <a href="./contact.html" target="" class="header__link">Contact</a>
+        <a href="./media/resume.pdf" target="_blank"class="header__link">Resume</a>
+    </header>
+    <div class="content">
+        <div class="left">
+            <h1 class="title">Hello and welcome to my little space on the internet</h1>
+            <p><strong>First of all i have to introduce myself</strong> <br> 
+                my name it's <strong>Yayson Olivares</strong> 
+                <br>i am a human being who expects 
+                in some point of his life contribute to the outer space
+                industry with the power of the <strong>code</strong><br> 
+                at this moment i am a Front End Developer <br>
+                and here it's my <strong>actual</strong> skillset: <br>
+            </p>
         </div>
-        <div id="content">
-            <div class="left">
-                <h1 class="title">Hello and welcome to my little space on the internet</h1>
-                <p><strong>First of all i have to present myself</strong> <br> 
-                    my name it's <strong>Yayson Olivares</strong> i am a human being who expects <br>
-                    in some point of his life contribute to the outer space<br> 
-                    industry with the power of the <strong>code</strong><br> 
-                    at this moment i am studing by myself web technologies such as: <br>
-                </p>
-                <ul>
-                    <li class="average">Git</li>
-                    <li class="average">GitHub</li>
-                    <li class="average">Javascript</li>
-                    <li class="average">CSS</li>
-                    <li class="average">HTML</li>
-                    <li class="underAverage">JSON</li>
-                    <li class="underAverage">Webpack</li>
-                    <li class="underAverage">Node.js</li>
-                    <li class="underAverage">ReactJs</li>
-                </ul>  
-                <p>And by my soft skills side i can tell this:</p>
-                <ul>
-                    <li>Problem-solver (if i am not studing you can find me fixing things in creative ways)</li>
-                    <li>Team-player (i love to teach and share knowledge that i think that it's relevant )</li>
-                    <li>High Performance Under Pressure (basically my best learning sphere until now was during one of the worst world pandemics)</li>
-                    <li>Calm Mind Under Chaos (applies the same example than in the point II)</li>
-                    <li>Proactive (i think that if you are in tech industry you must be constantly learning , also applies to life in general)</li>        
-                </ul>
-            </div>
-            <div class="right">
-                <img src="media/Profile.jpg" id="profile">
-            </div>
+        <div>
+            <img src="media/Profile.jpg" id="profile">
         </div>
-        <script src="index.js"></script>
-    </body>
+        <div class="skills-table">
+            <table >
+                <tr>
+                    <th>Languages/Frameworks</th>
+                    <th>Tools</th>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td>Git & GitHub</td>
+                </tr>
+                <tr> 
+                    <td>HTML/CSS</td>
+                    <td>Webpack</td>
+                </tr>
+                <tr>
+                    <td>JSON</td>
+                    <td>Chrome Dev Tools</td>
+                </tr>
+                <tr>
+                    <td>Node.js</td>
+                    <td>Bash</td>
+                </tr>
+                <tr>
+                    <td>ReactJs(on the go)</td>
+                    <td>Vscode</td>
+                </tr>
+              
+            </table> 
+        </div>
+        <div>                
+            <p>And by my soft skills side i can tell this:</p>
+            <ul>
+                <li>Problem-solver (if i am not studing you can find me fixing things in creative ways)</li>
+                <li>Team-player (i love to teach and share knowledge that i think that it's relevant )</li>
+                <li>High Performance Under Pressure (basically my best learning sphere until now was during one of the worst world pandemics)</li>
+                <li>Calm Mind Under Chaotic Situations</li>
+                <li>Proactive (i don't like to be static ,even i also like to multitask if it doesn't affect my performance)</li>        
+            </ul>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
 </html>
