@@ -1,0 +1,11 @@
+body{
+    background:linear-gradient(90deg,#1c3643,#273b47 25%,#1e5372);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    color:white;
+
+}
