@@ -15,4 +15,4 @@ function countdown(date){
       }
     }, 1000);
 }
-countdown("2020-05-28")
+countdown("2020-05-28T20:30:00.000Z")
