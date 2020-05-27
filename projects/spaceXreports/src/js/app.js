@@ -1,11 +1,11 @@
 import fetchData from './fetchData.js';
 const API = "https://api.spacexdata.com/v3/"
 const YOUTUBEAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCtI0Hodo5o5dUb67FeUjDeA&type=video&eventType=live&key=AIzaSyDBZ54X11YEYBUUqmoiS9BEozsxIAByH8M"
-let lastNumber;
+
+let pagecontainer=document.getElementsByClassName("pagecontainer");
 let nextlaunchdate;
-let pageItems=20;
-let drawitems=1;
-let setteditems=1;
+let pageItems=15;
+
 
 const setyoutubeIframe=(videoid,frameid)=>{
     let iframe = document.getElementById(frameid);
@@ -14,7 +14,6 @@ const setyoutubeIframe=(videoid,frameid)=>{
     iframe.allow="accelerometer accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
     iframe.allowfullscreen;
 };
-
 
 const getSingleElement = async(reqdata,apifull) =>{
     try {
@@ -28,9 +27,9 @@ const getSingleElement = async(reqdata,apifull) =>{
                 countdown(nextlaunchdate);
                 break;
             case "youtube":
-                console.log(data.items[1].id.videoId);
+                console.log(data.items[0].id.videoId);
 
-                setyoutubeIframe(data.items[1].id.videoId,"live-iframe")
+                setyoutubeIframe(data.items[0].id.videoId,"live-iframe")
 
             break;
 
@@ -44,24 +43,28 @@ const getSingleElement = async(reqdata,apifull) =>{
 
 getSingleElement("flight_number",`${API}launches/latest`);
 getSingleElement("launch_date_utc",`${API}launches/next`);
-getSingleElement("youtube",YOUTUBEAPI)
+if(document.getElementById("live-iframe")){
+    getSingleElement("youtube",YOUTUBEAPI)
+}
+let lastNumber;
 
 function countdown(date){
-const countDownDate = new Date(date).getTime();
-const x = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  document.getElementById("demo").innerHTML = `Next launch in 
-  ${days}d ${hours}h ${minutes}m ${seconds}s`;
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "Watch it live at ";
-  }
-}, 1000);
+    if(document.getElementById("demo")){
+    const countDownDate = new Date(date).getTime();
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("demo").innerHTML = `Next launch in 
+        ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "Watch it live at ";
+        }
+    }, 1000);}
 }
 
 
@@ -130,14 +133,68 @@ const createCard = (id) => {
     card.appendChild(about);
     document.getElementById("cont").appendChild(card);
 
-} 
-while(pageItems>=drawitems){
-    createCard(drawitems);
-    drawitems++;
 }
-while(pageItems>=setteditems){
-    let actid = createArr(setteditems);
-    setData(`${API}launches/${setteditems}`,actid);
-    setteditems++
+const cleanPage =()=>{
+    console.log("cleaning")
+    let container=document.getElementById("cont")
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+    console.log("cleaned")
+    
 }
+
+const setLimits = (pagenumber)=>{
+    if(pagenumber==1){
+        return 1
+    }else{
+        console.log(pagenumber)
+        return (pagenumber-1)*20; 
+    }
+
+
+};
+
+const drawPage =(id)=>{
+    let processedItems=1;
+    let initialID=id
+    while(pageItems>=processedItems){
+        createCard(id);
+        id++
+        processedItems++;
+    }
+    id=initialID;
+    processedItems=1;
+    while(pageItems>=processedItems){
+        let actid = createArr(id);
+        setData(`${API}launches/${id}`,actid);
+        id++;
+        processedItems++;
+    }
+    processedItems=1;
+}
+
+const pageHandler=(pageNumber)=>{
+    if(pagecontainer[0]){
+        cleanPage();
+        drawPage(setLimits(pageNumber));
+    }
+}
+const buttonsHandler=(event)=>{
+    pageHandler(event.target.innerHTML)   
+}
+const sethandlers =()=>{
+    const pages=document.getElementsByClassName("page")
+    if(pages){
+        for(var iterator = 0 ; iterator < pages.length; iterator++){
+            pages[iterator].addEventListener("click",buttonsHandler)
+        }
+    }
+}
+sethandlers()
+pageHandler(1);
+
+    
+
+
 
