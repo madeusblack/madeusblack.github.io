@@ -91,7 +91,11 @@ iframe{
 
    
 }
-
+.launch img{
+    width: 10em;
+    height: 10em;
+    padding: 1em;
+}
 .main__title{
     display: flex;
     justify-content: space-around;
