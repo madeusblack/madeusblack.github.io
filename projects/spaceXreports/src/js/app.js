@@ -28,9 +28,9 @@ const getSingleElement = async(reqdata,apifull) =>{
                 countdown(nextlaunchdate);
                 break;
             case "youtube":
-                console.log(data.items[0].id.videoId);
+                console.log(data.items[1].id.videoId);
 
-                setyoutubeIframe(data.items[0].id.videoId,"live-iframe")
+                setyoutubeIframe(data.items[1].id.videoId,"live-iframe")
 
             break;
 
