@@ -75,6 +75,17 @@ iframe{
     grid-template-columns: 40% 40%;
     row-gap: 1%;
 }
+@media only screen and (max-width: 1000px){
+    .main__container{
+        grid-template-columns: 95%;
+
+    }
+    .main__title{
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+    }
+}
 .launch{
     border:1px solid grey;
     box-shadow: 10px 10px 31px -1px rgba(255,255,255,0.75);
