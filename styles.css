@@ -19,14 +19,16 @@ time, mark, audio, video {
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(#cceabb,#fdcb9e)  no-repeat center center fixed;
+    background: linear-gradient(darkgray,white)  no-repeat center center fixed;
+    -webkit-font-smoothing:antialiased;
+
 }
 
 .header
 {
     padding: 0.5em 0;
     background: url("background.jpg") no-repeat center center ;
-        width: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,10 +38,9 @@ body{
 }
 .header__link{
     padding:0.5em 2em;
-    background-color: #fdcb9e;
-    border:3px solid #3f3f44;   
+    background-color: white;
     opacity: 0.9;
-    border-radius: 10px 0 10px 0;
+    margin:3px;
     font-weight:bold ;
     transition: 0.45s;
     height: 100%;
@@ -47,17 +48,15 @@ body{
     letter-spacing: 1px;
     
 }
-.header__link:hover{
-    background-color: #cceabb;
-    transition: 0.45s;
-    border-radius: 0 10px 0 10px ;
 
-}
 a{
     text-decoration: none;
     color: #3f3f44;
-
+    transition: 450ms;
     
+}
+a:hover{
+    text-decoration: underline;
 }
 a:visited {
     text-decoration: none;
@@ -89,7 +88,7 @@ td{
     
 }
 table{
-    background-color: #fdcb9e;
+    background-color: royalblue;
     margin-bottom: 5em;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 
@@ -100,7 +99,7 @@ table{
 {
     width: 200px;
     border-radius: 100px;
-    border:8px solid #fdcb9e;
+    border:8px solid rgb(141, 161, 221);
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 
 
@@ -114,13 +113,6 @@ li{
 }
 
 
-
-.average{
-    color: lightgreen;
-}
-.underAverage{
-    color:lightsalmon;
-}
 .content__projects{
 
     display: flex;
@@ -131,38 +123,33 @@ li{
 }
 #projects
 {
-    justify-content: space-around;
     display: grid; 
-    row-gap: 3em;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 22%);
+    row-gap: 2em;
     padding: 2em;
-    grid-template-columns: repeat(4, 20%);
     text-align: center;
 }
-.tech-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 1em;
-    row-gap: 0.2em;
-}
+
 .projectCard
 {
+    height: 24em;
     display: flex;
-    height: 20em;
     justify-content: space-around;
     align-items: center;
     border:1px solid white;
     border-radius: 22px 0 22px 0;
     background-color: #6886c5;
     transition: 0.4s;
+    margin: 1px;
     flex-direction: column;
     padding: 0 1em;
     color: white;
-    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);}
+    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
+}
 .projectCard:hover
 {
-    box-shadow: 10px 10px 9px -4px rgba(0,0,0,0.75);
-
-    transition: 0.4s;
+    box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.75);
     background-color: #1886c1;
 }
 .projectName
@@ -173,19 +160,27 @@ li{
 }
 .projectName img
 {
- border:3px solid white;
+ border:2px solid white;
+ width: 100%;
+ height: 75%;
 }
+
 .projectNameText{
     padding: 0.5em;
 }
 .projectName:hover{
     text-decoration: underline;
 }
+.tech-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.5em;
+    row-gap: 0.2em;
+}
 .tech
 {
     border: 1px solid white;
     font-weight: bold;
-    margin: 0 auto;
     padding: 0.2em;
 }
 .html5
@@ -210,8 +205,6 @@ li{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     column-gap: 3em;
-    grid-template-rows: auto auto;
-
 }
 .contact-main a{
     color: #40bad5;
@@ -250,9 +243,36 @@ li{
 
     }
     #projects{
-        grid-template-columns: 30% 30%
+        grid-template-columns: 95%;
+        row-gap: 5em;
+        margin-bottom: 20px;
+    }
+    .projectCard{
+        height: 100%;
+        padding: 1em;
 
     }
+    .projectCard img{
+        height: 80%;
+    }
+    .tech-container{
+        font-size: 28px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1em;
+
+    }
+    .projectName{
+        font-size: 34px;
+    }
+    .sourceCode{
+        display: flex;
+        align-items: center;
+        font-size: 25px
+    }
+
+
+    
 
 
 }
