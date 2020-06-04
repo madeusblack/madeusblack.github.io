@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/user/public_html/
+    - export DEPLOYPATH=/home/bwoq1navr8n2/public_html/
     - /bin/cp -R scrprints $DEPLOYPATH
     - /bin/cp -R media $DEPLOYPATH
     - /bin/cp -R projects $DEPLOYPATH
