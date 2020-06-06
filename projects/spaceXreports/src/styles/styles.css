@@ -75,6 +75,7 @@ iframe{
     grid-template-columns: 40% 40%;
     row-gap: 1%;
 }
+
 @media only screen and (max-width: 1000px){
     .main__container{
         grid-template-columns: 98%;

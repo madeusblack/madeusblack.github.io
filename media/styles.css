@@ -209,7 +209,7 @@ li{
     column-gap: 3em;
 }
 .contact-main a{
-    color: #40bad5;
+    color: green;
 }
 .contact-main a:hover{
     text-decoration: underline;
