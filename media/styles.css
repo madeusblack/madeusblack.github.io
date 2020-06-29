@@ -27,7 +27,7 @@ body{
 .header
 {
     padding: 0.5em 0;
-    background: url("background.jpg") no-repeat center center ;
+    background: black ;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -44,23 +44,19 @@ body{
     font-size: larger;
     color:white;
     font-weight:bold ;
-    transition: 0.45s;
+    transition: 450ms;
     height: 100%;
     cursor: pointer;
     letter-spacing: 1px;
+    text-decoration: none;
     
 }
 
-a{
-    text-decoration: none;
-    color: #3f3f44;
-    transition: 450ms;
-    
-}
-a:hover{
+.header__link:hover{
     text-decoration: underline;
+    color: cadetblue;
 }
-a:visited {
+.header__link:visited {
     text-decoration: none;
 }
 .content{

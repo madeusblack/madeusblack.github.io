@@ -1,31 +1,53 @@
-var board=[]
-let logicalgrid = (function () {    
-    
-    let generateboard = function(){
+let board=[];
+let playerOne;
+let playerTwo;
+let actualTurnMark = "blank";
+let lastTurnPlayer = "playerTwo";
+let startButton = document.getElementById("startGame");
+startButton.addEventListener("click",startGame);
+
+class Player {
+    constructor(name, mark) {
+        this.name = name;
+        this.mark = mark;
+    }
+}
+const setPlayers = () => {
+    const selectedMarkP1 = document.getElementById("X").checked;
+    const playerOneMark = selectedMarkP1 ?"x" :"o";
+    const playerTwoMark = !selectedMarkP1 ?"x" :"o";
+    const playerOneName = document.getElementById("playerOneName").value;
+    const playerTwoName = document.getElementById("playerTwoName").value;
+    playerOne = new Player(playerOneName,playerOneMark);
+    playerTwo = new Player(playerTwoName,playerTwoMark);
+}
+function startGame() {
+    setPlayers();
+    logicalGrid.generateBoard();
+    displayControler.displayboard();
+}
+const logicalGrid = (function () {    
+    const generateBoard = function(){
         board = [];
         mark="blank";
         while (board.length<9){
             boarpiece={
                 mark:mark,
-                position:board.length
             }
             board.push(boarpiece)
         }       
-
     }
-    generateboard()  
+    generateBoard()  
     return {
-        generateboard : generateboard,
+        generateBoard : generateBoard,
       }
-  }());
+}());
 
-  var actualmark="blank"
-    let lastturn="p2"
-var displaycontroller = (function () {
-    domcont=document.getElementById("boardcontainer");
-  
-    var checkDisplay = function(posMark){
-        switch (posMark) {
+const displayControler = (function () {
+    let displayedBoard=document.getElementById("displayedBoard");
+
+    const checkDisplay = pieceToCheck =>{
+        switch (pieceToCheck) {
             case "blank":
                 return "" 
             case "x":
@@ -35,161 +57,121 @@ var displaycontroller = (function () {
         }
     }
     
-    var removechilds = function(){
-        var checkNodes = document.getElementById("boardcontainer").hasChildNodes();
-        if (checkNodes==true){
-         let element = document.getElementById("boardcontainer");
-            while (element.firstChild) {
-                element.removeChild(element.firstChild);
+    const cleanBoard = () => {
+        displayedBoard=document.getElementById("displayedBoard");
+        if (displayedBoard.hasChildNodes()){
+            while (displayedBoard.firstChild) {
+                displayedBoard.removeChild(displayedBoard.firstChild);
             }
         }
     }
-    let actualname=""
-    var myHandler=function (){
-        let updateTurn=document.getElementById("actualturn")
-        tochange=this.firstChild.id
-        if(this.firstChild.innerHTML!=""||player.name==undefined)
-            {
-                return}
-        switch (lastturn) {
-            case "p1":
-                actualmark=player2.mark;
-                actualname=player2.name;
-                board[tochange].mark=actualmark
-                lastturn="p2"
-                updateTurn.innerHTML="Actual Turn: "+player.name
-                break;
-        
-            case "p2":
-                actualmark=player.mark;
-                actualname=player.name;
-                board[tochange].mark=actualmark
-                lastturn="p1"
-                updateTurn.innerHTML="Actual Turn: "+player2.name
-                break;
-        }
-        displayboard()
-        evaluatormod.iterate()  
-    }
-        
-    var displayboard = function(){
-        removechilds()
-        console.log("dboard")
-        displayedpos=0;
-        while (displayedpos<9){
-            let boardPosCard=document.createElement('div');
-            boardPosCard.classList.add('cardbox');
-            let boardcheck=document.createElement('h1');
-            boardcheck.classList.add('mark');
-            boardcheck.setAttribute("id", displayedpos);
-            boardPosCard.addEventListener("click",myHandler);
-            if(board[displayedpos].mark!=undefined){
-                boardcheck.innerHTML=checkDisplay(board[displayedpos].mark);
+    const playTurn = boardPiece => {
+        let updateTurn = document.getElementById("actualturn");
+        let tochange = boardPiece.firstChild.id;
+        if(boardPiece.firstChild.innerHTML!=""||playerOne.name==undefined){
+            return
             }
+        switch (lastTurnPlayer) {
+            case "playerOne":
+                actualTurnMark= playerTwo.mark;
+                actualname=playerTwo.name;
+                board[tochange].mark=actualTurnMark; 
+                lastTurnPlayer= "playerTwo"
+                updateTurn.innerHTML=`Actual Turn: ${playerOne.name} "${playerOne.mark.toUpperCase()}"`
+                break;
+            case "playerTwo":
+                actualTurnMark= playerOne.mark;
+                actualname=playerOne.name;
+                board[tochange].mark=actualTurnMark;
+                lastTurnPlayer= "playerOne";
+                updateTurn.innerHTML=`Actual Turn: ${playerTwo.name} "${playerTwo.mark.toUpperCase()}"`
+                break;
+            }
+    }
+    const handleTurn = function(){
+        playTurn(this);
+        displayboard();
+        evualatorOfGame.checkGameStatus();  
+    } 
 
-            console.log(board[displayedpos])
-            boardPosCard.appendChild(boardcheck);
-            domcont.appendChild(boardPosCard);
-            displayedpos++
+    const displayPieceOfBoard = actualPiece =>{
+        let boardPieceContainer=document.createElement('div');
+            let boardPiece=document.createElement('h1');
+            boardPieceContainer.classList.add('cardbox');
+            boardPieceContainer.addEventListener("click",handleTurn);
+            boardPiece.classList.add('mark');
+            boardPiece.setAttribute("id", actualPiece);
+            if(board[actualPiece].mark!=undefined){
+                boardPiece.innerHTML=checkDisplay(board[actualPiece].mark);
+            }
+            boardPieceContainer.appendChild(boardPiece);
+            displayedBoard.appendChild(boardPieceContainer);
+    }
+    const displayboard = function(){
+        cleanBoard()
+        let actualPositionToDisplay = 0;
+        while (actualPositionToDisplay<=8){
+            displayPieceOfBoard(actualPositionToDisplay);
+            actualPositionToDisplay++;
         }
     }
-    displayboard();
+
     return {
         displayboard: displayboard
     }
-        //passed for dimanic redraw
-  }());
+        //passed for dymanic redraw
+}());
 
-function Player(name,mark){
-    
-    var name = name;
-    var mark = mark;  
-    
-    return Object.freeze({
-        name,
-        mark
-    });
-}
-var player=""
-var player2=""
-function setplayers(){
-    logicalgrid.generateboard()
-    displaycontroller.displayboard();
-    function getmarkp1(){
-        let getter = document.getElementById("X").checked 
-        console.log(getter)
-        if(getter==true){
-            return "x"
-        }else{
-            return "o"
+const evualatorOfGame = (function () {    
+    const winPositions=["012","345","678","036","147","258","048","246"];
+    let res;
+    let totalX = [];
+    let totalO = [];
+    function checkWinner(pieceToCheck){
+        if(pieceToCheck=="x"){
+            totalX.push(pieceToCheck)
+            if(totalX.length>=3){
+                if(playerOne.mark=="x"){
+                    alert( `${playerOne.name} is the winner`)
+                    logicalGrid.generateBoard();
+                    displayControler.displayboard();
+                }
+                if(playerTwo.mark=="x"){
+                    alert(`${playerTwo.name} is the winner`)
+                    logicalGrid.generateBoard();
+                    displayControler.displayboard();
+                }
+            }
+        }
+        if(pieceToCheck=="o"){
+            totalO.push(pieceToCheck)
+            if(totalO.length>=3){
+                if(playerOne.mark=="o"){
+                    alert( `${playerOne.name} is the winner`)
+                    logicalGrid.generateBoard();
+                    displayControler.displayboard();
+                }
+                if(playerTwo.mark=="o"){
+                    alert( `${playerTwo.name} is the winner`)
+                    logicalGrid.generateBoard();
+                    displayControler.displayboard();
+                }
+            }
         }
     }
-    function getmarkp2(){
-        let getter = getmarkp1()
-        if(getter=="x"){
-            return "o"
-        }else{
-            return "x"
-        }
+
+    function checkGameStatus() {
+        winPositions.forEach( valor => {
+            res=valor.split("");
+            res.forEach(value=>{
+                let actualMark=board[value].mark
+                checkWinner(actualMark);
+            });
+            totalX = [];
+            totalO = [];
+        })
+    };
+    return{
+        checkGameStatus:checkGameStatus
     }
-    let pname = document.getElementById("Pname").value
-    let p2name = document.getElementById("P2name").value
-    
-     player = new Player(pname,getmarkp1())
-     player2 = new Player(p2name,getmarkp2())
-  
-}
-
-var evaluatormod = (function () {    
-    winpositions=["012","345","678","036","147","258","048","246"]
-    function iterate() {
-    let totalx = []
-    let totalo = []
-    winpositions.forEach( function(valor, indice) {
-        let res=valor.split("");
-        let getmark=""
-        res.forEach(function(value, index){
-            getmark=board[value].mark
-        if(getmark=="x"){
-            totalx.push(getmark)
-            if(totalx.length>=3){
-                if(player.mark=="x"){
-                    alert( player.name+" is the winner")
-                    logicalgrid.generateboard();
-                    displaycontroller.displayboard();
-
-
-                }if(player2.mark=="x"){
-                    alert( player2.name+" is the winner")
-                    logicalgrid.generateboard();
-                    displaycontroller.displayboard();
-
-                }
-                
-            }
-        }if(getmark=="o"){
-            totalo.push(getmark)
-            if(totalo.length>=3){
-                if(player.mark=="o"){
-                    alert( player.name+" is the winner")
-                    logicalgrid.generateboard();
-                    displaycontroller.displayboard();
-
-
-                }if(player2.mark=="o"){
-                    alert( player2.name+" is the winner")
-                    logicalgrid.generateboard();
-                    displaycontroller.displayboard();
-
-                }
-                
-            }
-        } 
-    }); totalx=[]
-    totalo=[]  
-    });  
-    }
-   return{
-    iterate:iterate
-   }
-  }());
+}());

@@ -14,11 +14,11 @@
             <div id="actualTurncont">
                 <h3 id="actualturn">Actual Turn:</h3>
             </div>
-            <label for="Pname">Player 1 name: </label>
-                <input type="text" placeholder="Bob" id="Pname">
+            <label for="playerOneName">Player 1 name: </label>
+                <input type="text" placeholder="Bob" id="playerOneName">
            
-            <label for="P2name">Player 2 name:</label>
-                <input type="text" placeholder="Rob" id="P2name">
+            <label for="playerTwoName">Player 2 name:</label>
+                <input type="text" placeholder="Rob" id="playerTwoName">
             <p>Select a Mark for P1:</p>
             <div class="markcont">
             <label for="X">X
@@ -28,9 +28,9 @@
                 <input type="radio" id="O" name="marksel" value="o">
             </label>
             </div>
-            <button id="start"onclick="setplayers()">Start Game</button>
+            <button id="startGame">Start Game</button>
         </div>   
-        <div id="boardcontainer"></div>     
+        <div id="displayedBoard"></div>     
         <div id="scoreboard"></div>
        
     </div>  

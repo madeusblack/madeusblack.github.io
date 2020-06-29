@@ -30,7 +30,7 @@ body{
     padding: 0 2em;
 }
 
-#boardcontainer{
+#displayedBoard{
     display:grid;
     grid-template-columns: repeat(3, 10em);
     grid-template-rows: repeat(3, 10em);
@@ -65,16 +65,18 @@ body{
     height: 3em;
     
 }
-#start{
+#startGame{
     padding:10px;
-    color:White;
-    background-color:#44c767;
+    color:black;
+    background-color:white;
     border-radius: 22px;
     font-family:Arial;
+    transition: 450ms;
+    cursor: pointer;
 }
-#start:focus{
+#startGame:focus{
     outline: none;
 }
-#start:hover{
+#startGame:hover{
     background-color:#5cbf2a;
 }
