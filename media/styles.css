@@ -205,9 +205,12 @@ li{
     column-gap: 3em;
 }
 .contact-main a{
-    color: green;
+    color: cadetblue;
+    transition: 450ms;
+    text-decoration: none;
 }
 .contact-main a:hover{
+    color: darkgray;
     text-decoration: underline;
 }
 @media only screen and (max-width: 1000px){
