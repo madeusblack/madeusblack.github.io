@@ -4,7 +4,6 @@ let playerTwo;
 let actualTurnMark = "blank";
 let lastTurnPlayer = "playerTwo";
 let startButton = document.getElementById("startGame");
-startButton.addEventListener("click",startGame);
 
 class Player {
     constructor(name, mark) {
@@ -12,6 +11,22 @@ class Player {
         this.mark = mark;
     }
 }
+const checkPlayers = () => {
+    const playerOneName = document.getElementById("playerOneName").value;
+    const playerTwoName = document.getElementById("playerTwoName").value;
+    if(playerOneName.length === 0 || playerTwoName.length === 0){
+        alert('Names must have at least one character');
+        console.log("test")
+    }
+    else{
+        setPlayers();
+        logicalGrid.generateBoard();
+        displayControler.displayboard();
+    }
+
+}
+startButton.addEventListener("click",checkPlayers);
+
 const setPlayers = () => {
     const selectedMarkP1 = document.getElementById("X").checked;
     const playerOneMark = selectedMarkP1 ?"x" :"o";
@@ -20,11 +35,6 @@ const setPlayers = () => {
     const playerTwoName = document.getElementById("playerTwoName").value;
     playerOne = new Player(playerOneName,playerOneMark);
     playerTwo = new Player(playerTwoName,playerTwoMark);
-}
-function startGame() {
-    setPlayers();
-    logicalGrid.generateBoard();
-    displayControler.displayboard();
 }
 const logicalGrid = (function () {    
     const generateBoard = function(){

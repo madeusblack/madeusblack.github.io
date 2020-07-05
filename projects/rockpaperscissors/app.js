@@ -17,29 +17,29 @@ function setImages(playerSel,cpuSel)
     switch (true) {
         case playerSel=="rock":
             getIDsetSrc("playerGame","rock.png")
-            console.log("player"+playerSel)
+            
             break;
         case playerSel=="paper":
             getIDsetSrc("playerGame","paper.png")
-            console.log("player"+playerSel)
+            
             break; 
         case playerSel=="scissors":
             getIDsetSrc("playerGame","scissors.png")
-            console.log("player"+playerSel)
+            
             break;
     }
 
     switch (true) {
         case cpuSel=="rock":
-            console.log("cpu")
+            
             getIDsetSrc("cpuGame","rock.png")
             break;
         case cpuSel=="paper":
-            console.log("cpu")
+            
             getIDsetSrc("cpuGame","paper.png")        
             break; 
         case cpuSel=="scissors":
-            console.log("cpu")
+            
             getIDsetSrc("cpuGame","scissors.png")            
             break;
         }
@@ -123,7 +123,7 @@ function game(computersel,PlayerSelection)
         case PlayerSelection==computersel:
             gdraw++;
             games++;
-            console.log(gdraw)
+            
             updateBoard("draw",gdraw,games);
             break;
         case PlayerSelection=="rock"&&computersel=="paper":
