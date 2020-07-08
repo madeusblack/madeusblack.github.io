@@ -1,54 +1,56 @@
 body{
-    font-family: 'Nunito Sans', sans-serif;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(107,107,154,0.8715861344537815) 35%, rgba(52,113,125,0.8743872549019608) 100%);}
-#displaycont{
-    background-color: grey;
-    width:438px;
-    height: 120px;
-    border:1px solid transparent;
-    opacity: 0.8;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: bottom;
+  background: #faf9f9;
 }
-#displayup{
-    text-align: right;
-font-size: 25px;
-color: darkgrey;
-margin-right: 10px;
-margin-bottom: 5px;
+#displaycont{
+  background-color: #a8dadc;
+  width:100%;
+  height: 30%;
+  opacity: 0.8;
+}
 
+#displayup{
+  text-align: right;
+  font-size: 25px;
+  color: #9e0059;
+  margin:5px 20px 15px 0px;
+  padding-top: 5px;
 }
 #displaybase{
-text-align: right;
-font-size: 55px;
-color: white;
-margin-right: 10px;
-margin-top: 5px;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 60px;
+  color: #011627;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 #buttonContainer{
-    display: grid;
-    grid-template-columns: 1fr repeat(3, 1fr);
-    width: 440px;
-    height: 500px;
-    opacity: 0.8;
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
 }
 #zero{
-    grid-column: 1 / span 2
+  grid-column: 1 / span 2
 }
 button{
-    border: none;
-    margin: 1px 1px 1px 1px;
-    background-color: grey;
-    color: white;
-    font-size: 20px;
-    transition: 0.4s;
+  border: none;
+  margin: 1px;
+  background-color: #a8dadc;
+  color: #390099;
+  font-size: 35px;
+  transition: 0.4s;
 }
 button:hover{
-    background-color: darkgrey;
-    transition: 0.4s;
-
+  background-color: #028090;
+  transition: 0.4s;
 }
 #calccontainer{
-    width: 30%;
-  margin: 0 auto;
-
+  position: absolute;
+  width: 80%;
+  height: 60%;
 }

@@ -15,12 +15,11 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
     vertical-align: baseline;
-    
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(darkgray,white)  no-repeat center center fixed;
-    -webkit-font-smoothing:antialiased;
+    background-color: #f0ece3;
+    color:#596e79;
 
 }
 .dropdown 
@@ -33,20 +32,22 @@ body{
     text-decoration: none;
 
 }
-
-  
 .dropdown-content 
 {
     display: none;
     position: absolute;
-    background: black ;
+    background: #596e79 ;
     color:white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
 }
-  
+.logo
+{
+height: 100%;
+border-radius: 100%;
+}
 .dropdown:hover .dropdown-content 
 {
     display: block;
@@ -56,7 +57,6 @@ body{
     text-decoration: none;
     color:white;
     transition: 450ms;
-
 }
 .resume__link:hover
 {
@@ -66,14 +66,13 @@ body{
 .header
 {
     padding: 0.5em 0;
-    background: black ;
+    background: #596e79 ;
     width: 100%;
+    height: 2.5em;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
-
-
 }
 .header__link{
     padding:0.5em 2em;
@@ -88,9 +87,7 @@ body{
     cursor: pointer;
     letter-spacing: 1px;
     text-decoration: none;
-    
 }
-
 .header__link:hover{
     text-decoration: underline;
     color: cadetblue;
@@ -113,19 +110,21 @@ body{
    justify-content: center;
 }
 table, th, td {
-    border: 1px solid #3f3f44;
+    border: 1px solid #596e79;
   }
 th{
     font-size: 25px;
     padding:5px 20px;
+    color: white;
+    background-color: #596e79;
 }
 td{
     padding: 10px 10px;
-    background-color: #f7f7f7;
+    background-color: transparent;
     
 }
 table{
-    background-color: royalblue;
+    background-color: transparent;
     margin-bottom: 5em;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 
@@ -135,11 +134,9 @@ table{
 #profile
 {
     width: 200px;
-    border-radius: 100px;
-    border:8px solid rgb(141, 161, 221);
+    border-radius: 100%;
+    border:2px solid #596e79;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
-
-
 }
 
 ul{
@@ -176,7 +173,7 @@ li{
     align-items: center;
     border:1px solid white;
     border-radius: 22px 0 22px 0;
-    background-color: #6886c5;
+    background-color: #596e79;
     transition: 0.4s;
     margin: 1px;
     flex-direction: column;
@@ -187,7 +184,13 @@ li{
 .projectCard:hover
 {
     box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.75);
-    background-color: #1886c1;
+    background-color: cadetblue;
+}
+.projectCard a{
+    text-decoration: none;
+}
+.projectCard a:hover{
+    text-decoration: underline;
 }
 .projectName
 {
@@ -242,14 +245,15 @@ li{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     column-gap: 3em;
+    color: #84a9ac;
 }
 .contact-main a{
-    color: cadetblue;
+    color: #596e79;
     transition: 450ms;
     text-decoration: none;
 }
 .contact-main a:hover{
-    color: darkgray;
+    color: cadetblue;
     text-decoration: underline;
 }
 @media only screen and (max-width: 1000px){

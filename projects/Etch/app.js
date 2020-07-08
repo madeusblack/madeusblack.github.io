@@ -3,7 +3,6 @@ let test=document.documentElement.style.getPropertyValue("--trows");
 let test1=document.documentElement.style.getPropertyValue("--sizerows");
 let trows = document.querySelector('#rows').value;
 let contain = document.querySelector('.container')
-
 //-----------------------------------------------------
 function sizeOfRows(trows){
     toret=440/trows
@@ -11,21 +10,16 @@ function sizeOfRows(trows){
 }
 //-----------------------------------------------------
 function rowchange(){
-    console.log("test")
     let size=sizeOfRows(trows)+"px"
     document.documentElement.style.setProperty('--sizerows', size);
     document.documentElement.style.setProperty('--trows', trows-1);
-
 }
-
 //----------------------------------------------------
 function colorset(){
     let ascend = document.querySelector('#bwascendant').checked;
     let rainbow = document.querySelector('#rainbow').checked;
     let eraser = document.querySelector('#eraser').checked;
-
     if(ascend==true){
-        console.log("grayscale")
         let cellcolor= this.getAttribute("class")
         let actualcolor=cellcolor.slice(9)
         actualcolor=parseInt(actualcolor)
@@ -53,7 +47,6 @@ function colorset(){
 //-----------------------------------------------------
 function generate(){
     contain = document.querySelector('.container')
-
     if(document.querySelector(".content")!=null){
         deleteChild()
     }
@@ -73,13 +66,10 @@ function generate(){
         totalgrid++
     }    tcells=0
     totalgrid=0
-
 }
 //-----------------------------------------------------
 function deleteChild() { 
-    console.log("dchild")
     contain = document.querySelector('.container')
-
     while (contain.hasChildNodes()) {  
         contain.removeChild(contain.firstChild);
       }

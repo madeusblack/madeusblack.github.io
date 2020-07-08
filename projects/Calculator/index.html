@@ -11,34 +11,27 @@
         <div id="displaycont">
             <p id="displayup">746</p>
             <p id="displaybase">746</p>
-        </div>
-        
+        </div>      
         <div id="buttonContainer">
-            <button onclick="clean('simple')">C</button>
-            <button onclick="clean('all')">CE</button>
-
-            <button onclick="backspace()"><-</button>
-            <button onclick="pass(' /')">/</button>
-            <button onclick="acdisplay(9)">9</button>
-            <button onclick="acdisplay(8)">8</button>
-            <button onclick="acdisplay(7)">7</button>
-            <button onclick="pass(' X')">X</button>
-
-            <button onclick="acdisplay(6)">6</button>
-            <button onclick="acdisplay(5)">5</button>
-            <button onclick="acdisplay(4)">4</button>
-            <button onclick="pass(' -')">-</button>
-
-            <button onclick="acdisplay(3)">3</button>
-            <button onclick="acdisplay(2)">2</button>
-            <button onclick="acdisplay(1)">1</button>
-            <button onclick="pass(' +')">+</button>
-
-            <button id="zero" onclick="acdisplay(0)">0</button>
+            <button class="clear" onclick="clean('simple')">C</button>
+            <button class="clear" onclick="clean('all')">CE</button>
+            <button class="operator" onclick="backspace()"><-</button>
+            <button class="operator" onclick="pass(' /')">/</button>
+            <button class="number" onclick="acdisplay(9)">9</button>
+            <button class="number" onclick="acdisplay(8)">8</button>
+            <button class="number" onclick="acdisplay(7)">7</button>
+            <button class="operator" onclick="pass(' X')">X</button>
+            <button class="number" onclick="acdisplay(6)">6</button>
+            <button class="number" onclick="acdisplay(5)">5</button>
+            <button class="number" onclick="acdisplay(4)">4</button>
+            <button class="operator" onclick="pass(' -')">-</button>
+            <button class="number" onclick="acdisplay(3)">3</button>
+            <button class="number" onclick="acdisplay(2)">2</button>
+            <button class="number" onclick="acdisplay(1)">1</button>
+            <button class="operator" onclick="pass(' +')">+</button>
+            <button class="number" id="zero" onclick="acdisplay(0)">0</button>
             <button onclick="acdisplay('.')">,</button>
-            <button onclick="result()">=</button>
-
-
+            <button class="operator" onclick="result()">=</button>
         </div>
     </div>
     <script src="app.js"></script>
