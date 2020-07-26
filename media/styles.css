@@ -65,7 +65,7 @@ border-radius: 100%;
 }
 .header
 {
-    padding: 0.5em 0;
+    padding: 0.4em 0;
     background: #596e79 ;
     width: 100%;
     height: 2.5em;
@@ -75,17 +75,12 @@ border-radius: 100%;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 }
 .header__link{
-    padding:0.5em 2em;
-    background-color: transparent;
-    opacity: 0.9;
-    margin:3px;
     font-size: larger;
     color:white;
     font-weight:bold ;
     transition: 450ms;
-    height: 100%;
     cursor: pointer;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     text-decoration: none;
 }
 .header__link:hover{
@@ -113,21 +108,22 @@ table, th, td {
     border: 1px solid #596e79;
   }
 th{
-    font-size: 25px;
-    padding:5px 20px;
+    padding:0.5em 1.3em;
+    border-radius: 22px;
     color: white;
-    background-color: #596e79;
 }
 td{
     padding: 10px 10px;
-    background-color: transparent;
-    
+    border: none;
 }
 table{
-    background-color: transparent;
-    margin-bottom: 5em;
+    border-radius: 22px 22px;   
+    margin-bottom: 2em;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
-
+}
+.table-header{
+    border-radius: 22px;
+    background-color: #596e79;
 }
 
 
@@ -135,7 +131,7 @@ table{
 {
     width: 200px;
     border-radius: 100%;
-    border:2px solid #596e79;
+    border:3px solid #596e79;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 }
 
@@ -152,39 +148,38 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3em;
-    width: 100%;
 }
 #projects
 {
     display: grid; 
     justify-content: space-around;
-    grid-template-columns: repeat(4, 22%);
+    grid-template-columns: repeat(4, 23%);
     row-gap: 2em;
-    padding: 2em;
+    padding: 0.5em;
     text-align: center;
 }
 
 .projectCard
 {
-    height: 24em;
+    height: 28em;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border:1px solid white;
-    border-radius: 22px 0 22px 0;
+    border-radius: 22px 22px 0px 22px;
     background-color: #596e79;
     transition: 0.4s;
     margin: 1px;
     flex-direction: column;
     padding: 0 1em;
-    color: white;
+    color: whitesmoke;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 }
 .projectCard:hover
 {
     box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.75);
     background-color: cadetblue;
+
 }
 .projectCard a{
     text-decoration: none;
@@ -257,15 +252,30 @@ li{
     text-decoration: underline;
 }
 @media only screen and (max-width: 1000px){
+
+    .header{
+        align-items: center;
+    }
+    .header__link{
+        font-weight:normal ;
+        font-size: 30px;
+        align-self: center;
+        padding: 0;
+        margin: 0;
+    }
+    .skills-table{
+        font-size: 40px;
+    }
     .contact-main{
         display:flex;
         flex-direction: column;
         align-items: center;
     }
     .content{
-
        display: flex;
        flex-direction: column;
+       padding: 0.2em 0em;
+       margin: 10px;
        justify-content: space-around;
        
     }
@@ -275,8 +285,13 @@ li{
     }
     .intro{
         order: 2;
+        padding: 1em;
+        margin: 0;
+        text-align: center;
+
 
     }
+
     .skills-table{
         order: 3;
         margin:1em;
@@ -287,7 +302,8 @@ li{
 
     }
     #projects{
-        grid-template-columns: 95%;
+        padding: 0 1em;
+        grid-template-columns: 100%;
         row-gap: 5em;
         margin-bottom: 20px;
     }
