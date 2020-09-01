@@ -230,6 +230,11 @@ li{
     background-color: #F0DB4F;
     color: black;
 }
+.react{
+background-color: #282C34;
+color:rgb(97, 218, 251);
+
+}
 .sourceCode{
     font-weight: bold;
     color: white;
