@@ -18,8 +18,8 @@ time, mark, audio, video {
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f0ece3;
-    color:#596e79;
+    background-color: #42475A;
+    color:#E79853;
 
 }
 .dropdown 
@@ -30,14 +30,14 @@ body{
 
 #dropdown:hover{
     text-decoration: none;
-
+    color:#E79853;
 }
 .dropdown-content 
 {
     display: none;
     position: absolute;
-    background: #596e79 ;
-    color:white;
+    background-color: #42475A;
+    color:#E79853;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
@@ -60,13 +60,13 @@ border-radius: 100%;
 }
 .resume__link:hover
 {
-    color: cadetblue;
+    color:#E79853;
     text-decoration: underline;
 }
 .header
 {
     padding: 0.4em 0;
-    background: #596e79 ;
+    background: #BF3030 ;
     width: 100%;
     height: 2.5em;
     display: flex;
@@ -85,7 +85,7 @@ border-radius: 100%;
 }
 .header__link:hover{
     text-decoration: underline;
-    color: cadetblue;
+    color:#E79853;
 }
 .header__link:visited {
     text-decoration: none;
@@ -105,7 +105,7 @@ border-radius: 100%;
    justify-content: center;
 }
 table, th, td {
-    border: 1px solid #596e79;
+    border: 1px solid #BF3030;
   }
 th{
     padding:0.5em 1.3em;
@@ -131,7 +131,7 @@ table{
 {
     width: 200px;
     border-radius: 100%;
-    border:3px solid #596e79;
+    border:3px solid #BF3030;
     box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 }
 
@@ -178,7 +178,7 @@ li{
 .projectCard:hover
 {
     box-shadow: 10px 10px 4px -4px rgba(0,0,0,0.75);
-    background-color: cadetblue;
+    background-color: #E79853;
 
 }
 .projectCard a{
@@ -231,9 +231,8 @@ li{
     color: black;
 }
 .react{
-background-color: #282C34;
-color:rgb(97, 218, 251);
-
+    background-color: #282C34;
+    color:rgb(97, 218, 251);
 }
 .sourceCode{
     font-weight: bold;
@@ -243,17 +242,18 @@ color:rgb(97, 218, 251);
     padding-top: 5em;
     padding-left: 2em;
     display: grid;
+    color: #D9C8A9;
+
     grid-template-columns: repeat(2,1fr);
     column-gap: 3em;
-    color: #84a9ac;
 }
 .contact-main a{
-    color: #596e79;
     transition: 450ms;
+    color: #D9BA5F;
     text-decoration: none;
 }
 .contact-main a:hover{
-    color: cadetblue;
+    color: #E79853;
     text-decoration: underline;
 }
 @media only screen and (max-width: 1000px){
