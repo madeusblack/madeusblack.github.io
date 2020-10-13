@@ -2,7 +2,6 @@ body{
   padding: 0;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
-  
 }
 .mainContainer{
   display: grid;
@@ -10,39 +9,20 @@ body{
   grid-template-columns: 35vw 65vw;
 }
 .leftColumnContainer{
-  background-color: #c4fb6d;
-  color:black;
+  background-color: #373a40;
+  display: grid;
+  grid-template-columns: 15vw 15vw;
+  color:#19d3da;
   padding: 1em;
 }
 .rightColumnContainer{
-  background-color: #05dfd7;
+  color:#19d3da;
+  background-color: #686d76;
   padding: 1em;
 }
+.contact{
+  grid-column:span 2;
+}
 a{
-  color: black;
-}
-.lname{
-  display: none;
-}
-.actualJobrl{
-  display: none;
-}
-
-@media (max-width: 600px) {
-  .mainContainer{
-    display: flex;
-    flex-direction: column;
-  }
-  .lname{
-    display: inline;
-  }
-  .rname{
-    display: none;
-  }
-  .actualJobrl{
-    display: block;
-  }
-  .actualJobr{
-    display: none;
-  }
+  color: #19d3da;
 }
