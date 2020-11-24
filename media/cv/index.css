@@ -8,21 +8,37 @@ body{
   margin: 0;
   grid-template-columns: 35vw 65vw;
 }
-.leftColumnContainer{
-  background-color: #373a40;
+.name{
+    align-self: start;
+    margin-left: 4.4%;
+    font-size: x-large;
+}
+.title{
+  grid-column: span 3;
+}
+
+.sectionContainer{
   display: grid;
-  grid-template-columns: 15vw 15vw;
-  color:#19d3da;
-  padding: 1em;
+  margin-bottom: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 90vw;
+  border: 1px solid black;
+  border-radius: 0.9rem;
+  padding: 0.5em;
 }
-.rightColumnContainer{
-  color:#19d3da;
-  background-color: #686d76;
-  padding: 1em;
+li{
+  margin: 0.6em;
+  font-weight: bolder;
 }
-.contact{
-  grid-column:span 2;
-}
+
 a{
-  color: #19d3da;
+  color: black;
+}
+
+.main{
+  display: flex;
+  margin-bottom: 2em;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
