@@ -23,20 +23,17 @@ body{
 
 }
 :root{
-    --main-color: #e9e9e9;
-    --font-color: #3d2917;
-    --font-secondary-color: #b47239;
-    --secondary-color:#a29fc4;
+    --main-color: #ffffff;
+    --font-color: #424140;
+    --font-secondary-color: #b1b1b1;
+    --secondary-color:rgb(99, 221, 74);
 }
 .dropdown 
 {
     position: relative;
-    
     width: 15vw;
     display: inline-block;
 }
-
-
 .dropdown-content 
 {
     display: none;
@@ -71,13 +68,12 @@ border-radius: 100%;
 .header
 {
     padding: 0.4em 0;
-    background: var(--secondary-color) ;
+    background: linear-gradient(180deg, rgb(99, 221, 74) 85%, rgba(234,70,48,0) 100%);
     width: 100%;
     height: 2.5em;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 10px 10px 29px -4px rgba(0,0,0,0.75);
 }
 .header__link{
     font-size: larger;
@@ -146,10 +142,7 @@ ul{
 li{
     padding: 0.3em 0;
 }
-
-
 .content__projects{
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,11 +163,11 @@ li{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border:1px solid var(--font-color);
     border-radius: 22px 22px 0px 22px;
     background-color: var(--main-color);
     transition: 0.4s;
     margin: 1px;
+    border:none;
     flex-direction: column;
     padding: 0 1em;
     color: var(--font-color);
